@@ -17,16 +17,37 @@ function Dashboard() {
   ])
 
   return (
-  <>
-    <h2>Dashboard</h2>
-    <Chart
-      width={'400px'}
-      height={'300px'}
-      chartType={'PieChart'}
-      data={dados}
-      options={{
-        title: TITULO
-      }} />
+    <>
+      <h2>Dashboard</h2>
+      <Chart
+        width={'400px'}
+        height={'300px'}
+        chartType={'PieChart'}
+        data={dados}
+        options={{
+          title: TITULO
+        }} 
+      />
+      <Chart
+        width={'400px'}
+        height={'400px'}
+        chartType={'PieChart'}
+        data={dados}
+        options={{
+          title:TITULO,
+          is3D: true
+        }}
+      />
+      <Chart
+        width={'400px'}
+        height={'400px'}
+        chartType={'PieChart'}
+        data={dados}
+        options={{
+          title: TITULO,
+          pieHole: 0.4
+        }}
+      />
     </>
   );
 }
