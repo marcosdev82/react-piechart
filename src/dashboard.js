@@ -23,11 +23,17 @@ function Dashboard() {
     function alteraDados() {
       const dadosGraficos = dados.map(linha => {
         if (Number.isInteger(linha[1])) {
-          linha[1] = Math.floor(Marth.randon() * 101);
+          linha[1] = Math.floor(Math.random() * 101);
         }
         return linha;
       });
       setDados(dadosGraficos)
+    }
+
+    const intervalId = setInterval(() => alteraDados(), 2000);
+
+    return () => {
+      clearInterval(intervalId);
     }
     
   }, [dados]);
