@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./dashboard.css";
 import { Chart } from "react-google-charts";
 
@@ -9,7 +9,7 @@ function Dashboard() {
     easing: "out",
   }
 
-  const [dados] = useState([
+  const [dados, setDados] = useState([
     ["Mês", "Quantidade"],
     ["Janeiro", 33],
     ["Fevereiro", 68],
@@ -18,6 +18,19 @@ function Dashboard() {
     ["Maio", 31],
     ["Junho", 73],
   ]);
+
+  useEffect(() => {
+    function alteraDados() {
+      const dadosGraficos = dados.map(linha => {
+        if (Number.isInteger(linha[1])) {
+          linha[1] = Math.floor(Marth.randon() * 101);
+        }
+        return linha;
+      });
+      setDados(dadosGraficos)
+    }
+    
+  }, [dados]);
 
   return (
     <>
