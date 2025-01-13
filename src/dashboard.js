@@ -73,11 +73,23 @@ function Dashboard() {
         }}
       />
 
-
       <Chart
         width={"400px"}
         height={"400px"}
         chartType={"LineChart"}
+        data={dados}
+        options={{
+          title: TITULO,
+          hAxis: { title: "Mês" },
+          vAxis: { title: "Quantidade" },
+          animation: ANIMATION
+        }}
+      />
+
+      <Chart
+        width={"400px"}
+        height={"400px"}
+        chartType={"AreaChart"}
         data={dados}
         options={{
           title: TITULO,
